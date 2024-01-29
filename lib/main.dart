@@ -1,7 +1,8 @@
-import 'package:drinking_game/features/game_mode_selection/ui/screen/mode_selection_screen.dart';
+import 'package:drinking_game/config/routes/app_route.dart';
 import 'package:flutter/material.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(const MainApp());
 }
 
@@ -10,13 +11,13 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
+    return MaterialApp.router(
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const ModeSelectionScreen(),
+      routerConfig: AppRoute.router,
     );
   }
 }

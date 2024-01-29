@@ -16,6 +16,8 @@ class GameModeLoaded extends GameModeState {
   const GameModeLoaded({required this.gameModes});
 }
 
+class GameModeSuccess extends GameModeState {}
+
 class GameModeError extends GameModeState {
   final String errorMessage;
 

@@ -1,8 +1,10 @@
-class GameMode {
+import 'package:equatable/equatable.dart';
+
+class GameMode extends Equatable {
   final String? name;
   final String? description;
 
-  GameMode({required this.name, required this.description});
+  const GameMode({required this.name, required this.description});
   Map<String, dynamic> toMap() {
     return {
       'name': name,
@@ -16,4 +18,8 @@ class GameMode {
       description: map['description'],
     );
   }
+
+  @override
+  // TODO: implement props
+  List<Object?> get props => [name, description];
 }
