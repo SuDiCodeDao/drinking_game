@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 class AppConstant {
   static const String databaseName = 'drinking_game_database';
   static const String id = 'id';
@@ -8,3 +10,5 @@ class AppConstant {
 }
 
 enum TableName { gameMode, gameCards, gameInstructions, gameSettings }
+
+Color primaryColor = Colors.purple.shade300;

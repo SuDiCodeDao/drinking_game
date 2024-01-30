@@ -1,3 +1,5 @@
+import 'package:drinking_game/core/constants/constants.dart';
+import 'package:drinking_game/styles/texts_style_app/text_style_app.dart';
 import 'package:flutter/material.dart';
 
 class ModeSelectionScreen extends StatelessWidget {
@@ -6,19 +8,22 @@ class ModeSelectionScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // extendBodyBehindAppBar: true,
+      // extendBody: true,
+      backgroundColor: primaryColor,
       appBar: AppBar(
-        elevation: 1,
+        backgroundColor: primaryColor,
+        elevation: 0,
         centerTitle: true,
-        backgroundColor: Colors.lightBlue,
         title: const Text(
-          'Drinking Game',
+          'Truth or Drink',
           style: TextStyle(color: Colors.white, fontWeight: FontWeight.w500),
         ),
         actions: [
           IconButton(
             onPressed: () {},
             icon: const Icon(
-              Icons.help_outline,
+              Icons.menu,
               color: Colors.white,
             ),
           ),
@@ -26,10 +31,40 @@ class ModeSelectionScreen extends StatelessWidget {
       ),
       body: SafeArea(
         child: SizedBox(
-          height: MediaQuery.sizeOf(context).height * 0.7,
-          child: const Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [],
+          height: MediaQuery.of(context).size.height,
+          width: MediaQuery.of(context).size.width,
+          child: Column(
+            children: [
+              Card(
+                child: Row(children: [
+                  Column(
+                     children: [
+                      const Text(
+                        "Spin it.",
+                        style: TextStyleApp.title,
+                      ),
+                      const Text(
+                        "Drinking game",
+                        style: TextStyle(color: Colors.grey),
+                      ),
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      ElevatedButton(
+                        style: const ButtonStyle(
+                            backgroundColor:
+                                MaterialStatePropertyAll(Colors.orangeAccent)),
+                        onPressed: () {},
+                        child: Text(
+                          "Chơi ngay".toUpperCase(),
+                          style: const TextStyle(color: Colors.white),
+                        ),
+                      )
+                    ],
+                  )
+                ]),
+              )
+            ],
           ),
         ),
       ),
