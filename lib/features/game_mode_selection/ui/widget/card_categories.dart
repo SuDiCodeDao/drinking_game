@@ -1,4 +1,3 @@
-import 'package:drinking_game/styles/texts_style_app/text_style_app.dart';
 import 'package:flutter/material.dart';
 
 class CardCategories extends StatelessWidget {
@@ -18,7 +17,6 @@ class CardCategories extends StatelessWidget {
       height: MediaQuery.of(context).size.height * 0.2,
       width: MediaQuery.of(context).size.width,
       child: Card(
-        elevation: 10,
         child: Stack(
           children: [
             Row(children: [
@@ -29,23 +27,15 @@ class CardCategories extends StatelessWidget {
                     children: [
                       Text(
                         title,
-                        style: TextStyleApp.title,
-                      ),
-                      Text(
-                        description,
-                        style: const TextStyle(color: Colors.grey),
+                        style: Theme.of(context).textTheme.titleLarge,
                       ),
                       const SizedBox(
                         height: 20,
                       ),
                       ElevatedButton(
-                        style: const ButtonStyle(
-                            backgroundColor:
-                                MaterialStatePropertyAll(Colors.orangeAccent)),
                         onPressed: () {},
                         child: Text(
                           "Chơi ngay".toUpperCase(),
-                          style: const TextStyle(color: Colors.white),
                         ),
                       )
                     ],

@@ -25,12 +25,15 @@ class DatabaseService {
   Future<void> _createDB(Database db, int version) async {
     await _createGameModeTable(db);
     await _createGameCardsTable(db);
+    await _insertGameModeTable(db);
   }
 
   Future<void> _createGameModeTable(Database db) async {
     await db.execute('''CREATE TABLE ${TableName.gameMode} (
+     ${AppConstant.id} INTEGER PRIMARY KEY AUTOINCREMENT,
     ${AppConstant.name} TEXT NOT NULL,
-    ${AppConstant.description} TEXT NOT NULL
+    ${AppConstant.description} TEXT NOT NULL,
+    ${AppConstant.imageUrl} TEXT NOT NULL,
     )''');
   }
 
@@ -39,8 +42,17 @@ class DatabaseService {
     ${AppConstant.id} INTEGER PRIMARY KEY AUTOINCREMENT,
     ${AppConstant.name} TEXT NOT NULL,
     ${AppConstant.description} TEXT NOT NULL,
-    ${AppConstant.image} TEXT NOT NULL,
     ${AppConstant.gameMode} TEXT NOT NULL,
     )''');
+  }
+
+  Future<void> _insertGameModeTable(Database db) async {
+    await db.insert('${TableName.gameMode}', {
+      AppConstant.name: 'Lói hay Lèm',
+      AppConstant.description: '''Bạn và bạn bè của bạn ngồi thành vòng tròn. 
+          Dựa vào oẳn tù tì hoặc quay chai, xúc xắc để xác định người chơi đầu tiên, sau đó lượt chơi sẽ diễn ra theo chiều kim đồng hồ. 
+          Người chơi sẽ được hỏi chọn trả lời câu hỏi hay thực hiện thử thách.''',
+      AppConstant.imageUrl: 'assets/images/'
+    });
   }
 }

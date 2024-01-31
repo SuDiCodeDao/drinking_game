@@ -1,6 +1,4 @@
-import 'package:drinking_game/core/constants/constants.dart';
 import 'package:drinking_game/features/game_mode_selection/ui/widget/card_categories.dart';
-import 'package:drinking_game/styles/texts_style_app/text_style_app.dart';
 import 'package:flutter/material.dart';
 
 class ModeSelectionScreen extends StatelessWidget {
@@ -9,23 +7,17 @@ class ModeSelectionScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // extendBodyBehindAppBar: true,
-      // extendBody: true,
-      backgroundColor: primaryColor,
       appBar: AppBar(
-        backgroundColor: primaryColor,
         elevation: 0,
         centerTitle: true,
         title: const Text(
           'Truth or Drink',
-          style: TextStyle(color: Colors.white, fontWeight: FontWeight.w500),
         ),
         actions: [
           IconButton(
             onPressed: () {},
             icon: const Icon(
               Icons.menu,
-              color: Colors.white,
             ),
           ),
         ],
@@ -44,7 +36,7 @@ class ModeSelectionScreen extends StatelessWidget {
                 const CardCategories(
                   title: 'Spin it.',
                   description: "Drinking game",
-                  imageUrl: "assets/images/spin.png",
+                  imageUrl: "assets/images/boardgame/spin.png",
                 ),
                 const SizedBox(
                   height: 15,
@@ -52,7 +44,7 @@ class ModeSelectionScreen extends StatelessWidget {
                 const CardCategories(
                   title: 'Spin it.',
                   description: "Drinking game",
-                  imageUrl: "assets/images/spin.png",
+                  imageUrl: "assets/images/boardgame/spin.png",
                 ),
                 const SizedBox(
                   height: 15,
@@ -60,7 +52,7 @@ class ModeSelectionScreen extends StatelessWidget {
                 const CardCategories(
                   title: 'Spin it.',
                   description: "Drinking game",
-                  imageUrl: "assets/images/spin.png",
+                  imageUrl: "assets/images/boardgame/spin.png",
                 ),
               ],
             ),
@@ -70,10 +62,3 @@ class ModeSelectionScreen extends StatelessWidget {
     );
   }
 }
-
-/*
- * Created on Tue Jan 30 2024
- *
- * Copyright (c) 2024 Your Company
- */
-
