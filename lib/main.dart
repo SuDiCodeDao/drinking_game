@@ -22,7 +22,8 @@ class MainApp extends StatelessWidget {
     return BlocProvider(
       create: (context) => GameModeBloc(GameModeRepository(
         databaseService: DatabaseService.instance,
-      )),
+      ))
+        ..add(GameModeLoadEvent()),
       child: MaterialApp.router(
         debugShowCheckedModeBanner: false,
         theme: DAppTheme.lightTheme,

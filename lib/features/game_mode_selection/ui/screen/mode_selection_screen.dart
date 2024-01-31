@@ -9,7 +9,8 @@ class ModeSelectionScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<GameModeBloc, GameModeState>(
+    return BlocConsumer<GameModeBloc, GameModeState>(
+      listener: (context, state) => print(state),
       builder: (context, state) {
         if (state is GameModeLoading) {
           return const Center(child: CircularProgressIndicator());
@@ -41,14 +42,18 @@ class ModeSelectionScreen extends StatelessWidget {
                       SizedBox(
                         height: MediaQuery.of(context).size.height * 0.05,
                       ),
-                      ListView.builder(
-                          itemCount: state.gameModes.length,
-                          itemBuilder: (context, index) {
-                            return CardCategories(
-                              name: state.gameModes[index].name!,
-                              imageUrl: state.gameModes[index].imageUrl!,
-                            );
-                          })
+                      SizedBox(
+                        height: double.infinity,
+                        width: double.infinity,
+                        child: ListView.builder(
+                            itemCount: state.gameModes.length,
+                            itemBuilder: (context, index) {
+                              return CardCategories(
+                                name: state.gameModes[index].name!,
+                                imageUrl: state.gameModes[index].imageUrl!,
+                              );
+                            }),
+                      )
                     ],
                   ),
                 ),
@@ -56,9 +61,10 @@ class ModeSelectionScreen extends StatelessWidget {
             ),
           );
         } else if (state is GameModeError) {
-          return Center(child: Text('Error: ${state.errorMessage}'));
+          return Scaffold(
+              body: Center(child: Text('Error: ${state.errorMessage}')));
         } else {
-          return Scaffold();
+          return const Scaffold();
         }
       },
     );
