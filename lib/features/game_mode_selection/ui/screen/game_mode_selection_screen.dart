@@ -1,4 +1,4 @@
-import 'package:drinking_game/features/game_mode_selection/ui/widget/card_categories.dart';
+import 'package:drinking_game/features/game_mode_selection/ui/widget/game_mode_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -20,7 +20,7 @@ class ModeSelectionScreen extends StatelessWidget {
               elevation: 0,
               centerTitle: true,
               title: const Text(
-                'Truth or Drink',
+                'Drinking Game',
               ),
               actions: [
                 IconButton(
@@ -42,13 +42,11 @@ class ModeSelectionScreen extends StatelessWidget {
                       SizedBox(
                         height: MediaQuery.of(context).size.height * 0.05,
                       ),
-                      SizedBox(
-                        height: double.infinity,
-                        width: double.infinity,
+                      Expanded(
                         child: ListView.builder(
                             itemCount: state.gameModes.length,
                             itemBuilder: (context, index) {
-                              return CardCategories(
+                              return GameModeItem(
                                 name: state.gameModes[index].name!,
                                 imageUrl: state.gameModes[index].imageUrl!,
                               );

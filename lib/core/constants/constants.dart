@@ -6,5 +6,3 @@ class AppConstant {
   static const String gameMode = 'gameMode';
   static const String imageUrl = 'imageUrl';
 }
-
-enum TableName { gameMode, gameCards, gameInstructions, gameSettings }

@@ -23,7 +23,7 @@ class DTextTheme {
     headlineSmall: _textStyle(
         fontSize: 18.0, fontWeight: FontWeight.w600, color: Colors.black),
     titleLarge: _textStyle(
-        fontSize: 20.0, fontWeight: FontWeight.w600, color: Colors.black),
+        fontSize: 18.0, fontWeight: FontWeight.w600, color: Colors.black),
     titleMedium: _textStyle(
         fontSize: 16.0, fontWeight: FontWeight.w500, color: Colors.black),
     titleSmall: _textStyle(

@@ -1,6 +1,6 @@
 import 'dart:core';
 
-import 'package:drinking_game/features/game_mode_selection/ui/screen/mode_selection_screen.dart';
+import 'package:drinking_game/features/game_mode_selection/ui/screen/game_mode_selection_screen.dart';
 import 'package:go_router/go_router.dart';
 
 class RouteName {
