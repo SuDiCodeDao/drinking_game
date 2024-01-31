@@ -1,14 +1,8 @@
 import 'package:flutter/material.dart';
 
 class CardCategories extends StatelessWidget {
-  const CardCategories({
-    super.key,
-    required this.title,
-    required this.description,
-    required this.imageUrl,
-  });
-  final String title;
-  final String description;
+  const CardCategories({super.key, required this.name, required this.imageUrl});
+  final String name;
   final String imageUrl;
 
   @override
@@ -26,7 +20,7 @@ class CardCategories extends StatelessWidget {
                   child: Column(
                     children: [
                       Text(
-                        title,
+                        name,
                         style: Theme.of(context).textTheme.titleLarge,
                       ),
                       const SizedBox(

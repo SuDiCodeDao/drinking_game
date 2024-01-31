@@ -49,10 +49,23 @@ class DatabaseService {
   Future<void> _insertGameModeTable(Database db) async {
     await db.insert('${TableName.gameMode}', {
       AppConstant.name: 'Lói hay Lèm',
-      AppConstant.description: '''Bạn và bạn bè của bạn ngồi thành vòng tròn. 
-          Dựa vào oẳn tù tì hoặc quay chai, xúc xắc để xác định người chơi đầu tiên, sau đó lượt chơi sẽ diễn ra theo chiều kim đồng hồ. 
-          Người chơi sẽ được hỏi chọn trả lời câu hỏi hay thực hiện thử thách.''',
-      AppConstant.imageUrl: 'assets/images/'
+      AppConstant.description:
+          '''Bạn và bạn bè của bạn ngồi thành vòng tròn.Dựa vào oẳn tù tì hoặc quay chai, xúc xắc để xác định người chơi đầu tiên, sau đó lượt chơi sẽ diễn ra theo chiều kim đồng hồ. Người chơi sẽ được hỏi chọn trả lời câu hỏi hay thực hiện thử thách.''',
+      AppConstant.imageUrl: 'assets/images/boardgame/truth_or_dare.png'
+    });
+
+    await db.insert('${TableName.gameMode}', {
+      AppConstant.name: 'Tôi chưa bao giờ',
+      AppConstant.description:
+          '''Mọi người ngồi xung quanh thành một vòng tròn, lần lượt bốc các lá bài "Tôi chưa bao giờ ...", nếu ai đã từng làm việc đó thì uống.''',
+      AppConstant.imageUrl: 'assets/images/boardgame/never_have_i_ever.png'
+    });
+
+    await db.insert('${TableName.gameMode}', {
+      AppConstant.name: 'Tùy chỉnh',
+      AppConstant.description:
+          '''Bạn có thể thiết lập ván chơi theo ý muốn của bạn và nhóm của bạn. Chúc các bạn vui vẻ! ''',
+      AppConstant.imageUrl: 'assets/images/boardgame/custom.png'
     });
   }
 }
