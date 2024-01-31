@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
 
 class GameModeItem extends StatelessWidget {
-  const GameModeItem({super.key, required this.name, required this.imageUrl});
+  const GameModeItem(
+      {super.key,
+      required this.name,
+      required this.imageUrl,
+      required this.onPressed});
   final String name;
   final String imageUrl;
+  final VoidCallback onPressed;
 
   @override
   Widget build(BuildContext context) {

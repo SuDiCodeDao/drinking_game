@@ -1,6 +1,7 @@
 import 'package:drinking_game/features/game_mode_selection/ui/widget/game_mode_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../bloc/game_mode_bloc.dart';
 
@@ -49,6 +50,11 @@ class ModeSelectionScreen extends StatelessWidget {
                               return GameModeItem(
                                 name: state.gameModes[index].name!,
                                 imageUrl: state.gameModes[index].imageUrl!,
+                                onPressed: () {
+                                  context.goNamed('/gamePlay', pathParameters: {
+                                    'id': state.gameModes[index].id! as String,
+                                  });
+                                },
                               );
                             }),
                       )

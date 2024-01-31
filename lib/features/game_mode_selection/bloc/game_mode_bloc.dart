@@ -14,11 +14,9 @@ class GameModeBloc extends Bloc<GameModeEvent, GameModeState> {
       emit(GameModeLoading());
       try {
         final gameModes = await _gameModeRepository.getGameModes();
-        print(gameModes);
         emit(GameModeLoaded(gameModes: gameModes));
       } catch (e) {
         emit(GameModeError(errorMessage: e.toString()));
-        print(e.toString());
       }
     });
   }
