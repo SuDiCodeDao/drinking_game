@@ -5,11 +5,10 @@ import 'package:drinking_game/features/game_mode_selection/repositories/game_mod
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'core/services/database_service.dart';
 import 'features/game_mode_selection/bloc/game_mode_bloc.dart';
 
 void main() {
-  AppInjection.setupDependencies();
+  setupDependencies();
   WidgetsFlutterBinding.ensureInitialized();
   runApp(const MainApp());
 }
@@ -20,10 +19,8 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => GameModeBloc(GameModeRepository(
-        databaseService: DatabaseService.instance,
-      ))
-        ..add(GameModeLoadEvent()),
+      create: (context) =>
+          GameModeBloc(getIt<GameModeRepository>())..add(GameModeLoadEvent()),
       child: MaterialApp.router(
         debugShowCheckedModeBanner: false,
         theme: DAppTheme.lightTheme,

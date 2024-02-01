@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../../../config/routes/app_route.dart';
 import '../../bloc/game_mode_bloc.dart';
 
 class ModeSelectionScreen extends StatelessWidget {
@@ -24,7 +25,9 @@ class ModeSelectionScreen extends StatelessWidget {
               ),
               actions: [
                 IconButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    context.push(RouteName.gameSetting);
+                  },
                   icon: const Icon(
                     Icons.menu,
                   ),
