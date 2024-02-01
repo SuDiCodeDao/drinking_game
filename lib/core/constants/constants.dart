@@ -5,4 +5,5 @@ class AppConstant {
   static const String description = 'description';
   static const String gameMode = 'gameMode';
   static const String imageUrl = 'imageUrl';
+  static const String isLocked = 'isLocked';
 }

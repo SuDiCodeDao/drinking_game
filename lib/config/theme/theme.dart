@@ -1,3 +1,4 @@
+import 'package:drinking_game/config/theme/custom_themes/dialog_theme.dart';
 import 'package:flutter/material.dart';
 
 import 'custom_themes/appbar_theme.dart';
@@ -18,6 +19,7 @@ class DAppTheme {
     required ElevatedButtonThemeData elevationButtonTheme,
     required InputDecorationTheme inputDecorationTheme,
     required CardTheme cardTheme,
+    required DialogTheme dialogTheme,
   }) {
     return ThemeData(
       useMaterial3: true,
@@ -30,6 +32,7 @@ class DAppTheme {
       elevatedButtonTheme: elevationButtonTheme,
       inputDecorationTheme: inputDecorationTheme,
       cardTheme: cardTheme,
+      dialogTheme: dialogTheme,
     );
   }
 
@@ -42,16 +45,17 @@ class DAppTheme {
     inputDecorationTheme: DTextFieldTheme.lightInputDecorationTheme,
     elevationButtonTheme: DElevatedButtonTheme.lightElevatedButtonTheme,
     cardTheme: DCardTheme.lightCardTheme,
+    dialogTheme: DDialogTheme.lightDialogTheme,
   );
 
   static final ThemeData darkTheme = _baseTheme(
-    brightness: Brightness.dark,
-    primaryColor: Colors.teal,
-    elevationButtonTheme: DElevatedButtonTheme.darkElevatedButtonTheme,
-    appBarTheme: DAppbarTheme.darkAppbarTheme,
-    scaffoldBackgroundColor: Colors.black,
-    textTheme: DTextTheme.darkTextTheme,
-    inputDecorationTheme: DTextFieldTheme.darkInputDecorationTheme,
-    cardTheme: DCardTheme.darkCardTheme,
-  );
+      brightness: Brightness.dark,
+      primaryColor: Colors.teal,
+      elevationButtonTheme: DElevatedButtonTheme.darkElevatedButtonTheme,
+      appBarTheme: DAppbarTheme.darkAppbarTheme,
+      scaffoldBackgroundColor: Colors.black,
+      textTheme: DTextTheme.darkTextTheme,
+      inputDecorationTheme: DTextFieldTheme.darkInputDecorationTheme,
+      cardTheme: DCardTheme.darkCardTheme,
+      dialogTheme: DDialogTheme.darkDialogTheme);
 }

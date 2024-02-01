@@ -10,6 +10,16 @@ class GameCard extends Equatable {
     required this.name,
     required this.gameMode,
   });
+  factory GameCard.fromMap(Map<String, dynamic> map) {
+    return GameCard(
+      id: map['id'],
+      name: map['name'],
+      gameMode: map['gameMode'],
+    );
+  }
+  Map<String, dynamic> toMap() {
+    return {'id': id, 'name': name, 'gameMode': gameMode};
+  }
 
   @override
   // TODO: implement props

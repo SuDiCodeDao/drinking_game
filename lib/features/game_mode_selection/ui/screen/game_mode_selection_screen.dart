@@ -10,8 +10,7 @@ class ModeSelectionScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocConsumer<GameModeBloc, GameModeState>(
-      listener: (context, state) => print(state),
+    return BlocBuilder<GameModeBloc, GameModeState>(
       builder: (context, state) {
         if (state is GameModeLoading) {
           return const Center(child: CircularProgressIndicator());
@@ -51,10 +50,10 @@ class ModeSelectionScreen extends StatelessWidget {
                                 name: state.gameModes[index].name!,
                                 imageUrl: state.gameModes[index].imageUrl!,
                                 onPressed: () {
-                                  context.goNamed('/gamePlay', pathParameters: {
-                                    'id': state.gameModes[index].id! as String,
-                                  });
+                                  context.go(
+                                      '/gameMode/${state.gameModes[index].id!}');
                                 },
+                                isLocked: state.gameModes[index].isLocked ?? 0,
                               );
                             }),
                       )

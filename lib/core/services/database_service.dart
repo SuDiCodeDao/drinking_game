@@ -33,7 +33,8 @@ class DatabaseService {
      ${AppConstant.id} INTEGER PRIMARY KEY AUTOINCREMENT,
     ${AppConstant.name} TEXT NOT NULL,
     ${AppConstant.description} TEXT NOT NULL,
-    ${AppConstant.imageUrl} TEXT NOT NULL
+    ${AppConstant.imageUrl} TEXT NOT NULL,
+     ${AppConstant.isLocked} INTEGER NOT NULL DEFAULT 0,
     )''');
   }
 
@@ -49,7 +50,7 @@ class DatabaseService {
     await db.insert('GameMode', {
       AppConstant.name: 'Lói hay Lèm',
       AppConstant.description:
-          '''Bạn và bạn bè của bạn ngồi thành vòng tròn.Dựa vào oẳn tù tì hoặc quay chai, xúc xắc để xác định người chơi đầu tiên, sau đó lượt chơi sẽ diễn ra theo chiều kim đồng hồ. Người chơi sẽ được hỏi chọn trả lời câu hỏi hay thực hiện thử thách.''',
+          '''Bạn và bạn bè của bạn ngồi thành vòng tròn.Dựa vào oẳn tù tì hoặc quay chai, xúc xắc để xác định người chơi đầu tiên, sau đó lượt chơi sẽ diễn ra theo chiều kim đồng hồ. Người chơi sẽ được hỏi chọn trả lời câu hỏi hay thực hiện thử thách. Nếu họ từ chối trả lời câu hỏi thì yêu cầu họ uống và thực hiện thử thách''',
       AppConstant.imageUrl: 'assets/images/boardgame/truth_or_dare.png'
     });
 
@@ -61,10 +62,18 @@ class DatabaseService {
     });
 
     await db.insert('GameMode', {
+      AppConstant.name: 'Chuyếnh choáng',
+      AppConstant.description:
+          '''Mọi người ngồi xung quanh thành một vòng tròn, từng người lần lượt bốc các lá bài và thực hiện theo yêu cầu của lá bài ''',
+      AppConstant.imageUrl: 'assets/images/boardgame/drunk.png'
+    });
+
+    await db.insert('GameMode', {
       AppConstant.name: 'Tùy chỉnh',
       AppConstant.description:
           '''Bạn có thể thiết lập ván chơi theo ý muốn của bạn và nhóm của bạn. Chúc các bạn vui vẻ! ''',
-      AppConstant.imageUrl: 'assets/images/boardgame/custom.png'
+      AppConstant.imageUrl: 'assets/images/boardgame/custom.png',
+      AppConstant.isLocked: 1,
     });
   }
 }

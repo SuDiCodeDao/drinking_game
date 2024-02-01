@@ -19,7 +19,7 @@ class AppRoute {
     GoRoute(
         path: RouteName.gamePlay,
         builder: (context, state) => GamePlayScreen(
-              id: state.pathParameters['id']!,
+              id: int.parse(state.pathParameters['id']!),
             ))
   ]);
 }

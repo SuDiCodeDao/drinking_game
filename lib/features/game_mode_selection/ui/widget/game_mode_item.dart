@@ -5,8 +5,10 @@ class GameModeItem extends StatelessWidget {
       {super.key,
       required this.name,
       required this.imageUrl,
-      required this.onPressed});
+      required this.onPressed,
+      required this.isLocked});
   final String name;
+  final int isLocked;
   final String imageUrl;
   final VoidCallback onPressed;
 
@@ -18,6 +20,11 @@ class GameModeItem extends StatelessWidget {
       child: Card(
         child: Stack(
           children: [
+            if (isLocked == 1)
+              const Positioned(
+                  top: 5,
+                  right: 5,
+                  child: Icon(Icons.lock, color: Colors.grey)),
             Row(children: [
               Expanded(
                 child: Padding(
@@ -36,7 +43,7 @@ class GameModeItem extends StatelessWidget {
                         height: 20,
                       ),
                       ElevatedButton(
-                        onPressed: () {},
+                        onPressed: onPressed,
                         child: Text(
                           "Chơi ngay".toUpperCase(),
                         ),
