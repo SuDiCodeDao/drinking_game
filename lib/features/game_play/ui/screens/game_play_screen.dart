@@ -29,12 +29,24 @@ class GamePlayScreen extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.all(8.0),
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Align(
                     alignment: Alignment.centerLeft,
                     child: IconButton(
                         onPressed: () {}, icon: const Icon(Icons.volume_up))),
-                const CardItem(),
+                Expanded(
+                  child: Stack(
+                      children: List.generate(
+                          10,
+                          (index) => Positioned(
+                              bottom: index * 10.0,
+                              child: const CardItem(
+                                name: 'Haha',
+                              )))),
+                ),
+                const SizedBox(height: 20.0),
                 ElevatedButton(onPressed: () {}, child: const Text('Kế tiếp'))
               ],
             ),
