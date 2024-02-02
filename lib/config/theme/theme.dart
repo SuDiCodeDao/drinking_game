@@ -1,4 +1,5 @@
 import 'package:drinking_game/config/theme/custom_themes/dialog_theme.dart';
+import 'package:drinking_game/config/theme/custom_themes/icon_button_theme.dart';
 import 'package:flutter/material.dart';
 
 import 'custom_themes/appbar_theme.dart';
@@ -10,17 +11,17 @@ import 'custom_themes/text_theme.dart';
 class DAppTheme {
   DAppTheme._();
 
-  static ThemeData _baseTheme({
-    required Brightness brightness,
-    required Color primaryColor,
-    required Color scaffoldBackgroundColor,
-    required TextTheme textTheme,
-    required AppBarTheme appBarTheme,
-    required ElevatedButtonThemeData elevationButtonTheme,
-    required InputDecorationTheme inputDecorationTheme,
-    required CardTheme cardTheme,
-    required DialogTheme dialogTheme,
-  }) {
+  static ThemeData _baseTheme(
+      {required Brightness brightness,
+      required Color primaryColor,
+      required Color scaffoldBackgroundColor,
+      required TextTheme textTheme,
+      required AppBarTheme appBarTheme,
+      required ElevatedButtonThemeData elevationButtonTheme,
+      required InputDecorationTheme inputDecorationTheme,
+      required CardTheme cardTheme,
+      required DialogTheme dialogTheme,
+      required IconButtonThemeData iconButtonTheme}) {
     return ThemeData(
       useMaterial3: true,
       fontFamily: 'Poppins',
@@ -33,6 +34,7 @@ class DAppTheme {
       inputDecorationTheme: inputDecorationTheme,
       cardTheme: cardTheme,
       dialogTheme: dialogTheme,
+      iconButtonTheme: iconButtonTheme,
     );
   }
 
@@ -46,6 +48,7 @@ class DAppTheme {
     elevationButtonTheme: DElevatedButtonTheme.lightElevatedButtonTheme,
     cardTheme: DCardTheme.lightCardTheme,
     dialogTheme: DDialogTheme.lightDialogTheme,
+    iconButtonTheme: DIconButtonTheme.lightIconButtonTheme,
   );
 
   static final ThemeData darkTheme = _baseTheme(
@@ -57,5 +60,6 @@ class DAppTheme {
       textTheme: DTextTheme.darkTextTheme,
       inputDecorationTheme: DTextFieldTheme.darkInputDecorationTheme,
       cardTheme: DCardTheme.darkCardTheme,
-      dialogTheme: DDialogTheme.darkDialogTheme);
+      dialogTheme: DDialogTheme.darkDialogTheme,
+      iconButtonTheme: DIconButtonTheme.darkIconButtonTheme);
 }
