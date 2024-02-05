@@ -6,7 +6,7 @@ abstract class GamePlayEvent extends Equatable {
   List<Object> get props => [];
 }
 
-class GamePlayLoadedEvent extends GamePlayEvent {}
+class GamePlayLoadEvent extends GamePlayEvent {}
 
 class GamePlayHelpButtonPressedEvent extends GamePlayEvent {}
 

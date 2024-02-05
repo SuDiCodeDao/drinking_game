@@ -18,13 +18,9 @@ class GameModeItem extends StatelessWidget {
       height: MediaQuery.of(context).size.height * 0.2,
       width: MediaQuery.of(context).size.width,
       child: Card(
+        color: isLocked == 1 ? Colors.black : Colors.grey,
         child: Stack(
           children: [
-            if (isLocked == 1)
-              const Positioned(
-                  top: 5,
-                  right: 5,
-                  child: Icon(Icons.lock, color: Colors.grey)),
             Row(children: [
               Expanded(
                 child: Padding(

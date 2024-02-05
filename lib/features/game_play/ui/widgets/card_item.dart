@@ -8,8 +8,8 @@ class CardItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: MediaQuery.of(context).size.height * 0.6,
-      width: MediaQuery.of(context).size.width * 0.8,
+      height: MediaQuery.of(context).size.height * 0.45,
+      width: MediaQuery.of(context).size.width * 0.75,
       child: Card(
           child: Center(
         child: Text(name),

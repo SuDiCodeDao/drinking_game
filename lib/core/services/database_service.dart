@@ -42,7 +42,8 @@ class DatabaseService {
     await db.execute('''CREATE TABLE GameCards (
     ${AppConstant.id} INTEGER PRIMARY KEY AUTOINCREMENT,
     ${AppConstant.name} TEXT NOT NULL,
-    ${AppConstant.gameMode} TEXT NOT NULL
+    gameModeId TEXT NOT NULL,
+    FOREIGN KEY (gameModeId) REFERENCES GameMode(${AppConstant.id})
     )''');
   }
 

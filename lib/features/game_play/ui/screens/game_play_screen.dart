@@ -17,39 +17,42 @@ class GamePlayScreen extends StatelessWidget {
             onPressed: () {
               context.go(RouteName.gameModeSelection);
             },
-            icon: const Icon(Icons.arrow_back_ios)),
+            icon: const Icon(
+              Icons.arrow_back_ios_outlined,
+              size: 18,
+            )),
         actions: [
-          IconButton(onPressed: () {}, icon: const Icon(Icons.help_outline))
+          IconButton(
+              onPressed: () {}, icon: const Icon(Icons.help_outline, size: 18))
         ],
       ),
       body: SafeArea(
-        child: SizedBox(
-          height: MediaQuery.of(context).size.height,
-          width: MediaQuery.of(context).size.width,
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Align(
-                    alignment: Alignment.centerLeft,
-                    child: IconButton(
-                        onPressed: () {}, icon: const Icon(Icons.volume_up))),
-                Expanded(
-                  child: Stack(
-                      children: List.generate(
-                          10,
-                          (index) => Positioned(
-                              bottom: index * 10.0,
-                              child: const CardItem(
-                                name: 'Haha',
-                              )))),
-                ),
-                const SizedBox(height: 20.0),
-                ElevatedButton(onPressed: () {}, child: const Text('Kế tiếp'))
-              ],
-            ),
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Align(
+                  alignment: Alignment.centerLeft,
+                  child: IconButton(
+                      style: IconButton.styleFrom(backgroundColor: Colors.grey),
+                      onPressed: () {},
+                      icon: const Icon(Icons.volume_up, size: 18))),
+              Expanded(
+                child: Stack(
+                    alignment: Alignment.center,
+                    children: List.generate(
+                        10,
+                        (index) => Positioned(
+                            bottom: index * 5.0,
+                            child: const CardItem(
+                              name: 'Haha',
+                            )))),
+              ),
+              const SizedBox(height: 20.0),
+              ElevatedButton(onPressed: () {}, child: const Text('Kế tiếp'))
+            ],
           ),
         ),
       ),
