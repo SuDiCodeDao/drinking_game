@@ -23,9 +23,7 @@ class AppRoute {
               id: int.parse(state.pathParameters['id']!),
             )),
     GoRoute(
-      path: RouteName.gameSetting,
-      builder: (context, state) => const GameSettingScreen()
-
-    )
+        path: RouteName.gameSetting,
+        builder: (context, state) => const GameSettingScreen())
   ]);
 }

@@ -6,7 +6,13 @@ abstract class GamePlayEvent extends Equatable {
   List<Object> get props => [];
 }
 
-class GamePlayLoadEvent extends GamePlayEvent {}
+class GamePlayLoadEvent extends GamePlayEvent {
+  final int gameModeId;
+  const GamePlayLoadEvent(this.gameModeId);
+
+  @override
+  List<Object> get props => [gameModeId];
+}
 
 class GamePlayHelpButtonPressedEvent extends GamePlayEvent {}
 

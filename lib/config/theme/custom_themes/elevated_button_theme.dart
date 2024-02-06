@@ -15,14 +15,14 @@ class DElevatedButtonTheme {
         disabledBackgroundColor: Colors.grey,
         disabledForegroundColor: Colors.grey,
         side: BorderSide(color: sideColor),
-        padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+        padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 10),
         textStyle: const TextStyle(
           fontSize: 16,
           color: Colors.white,
           fontWeight: FontWeight.w600,
         ),
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(8),
+          borderRadius: BorderRadius.circular(15),
         ),
       ),
     );

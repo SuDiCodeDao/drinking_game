@@ -52,14 +52,15 @@ class DAppTheme {
   );
 
   static final ThemeData darkTheme = _baseTheme(
-      brightness: Brightness.dark,
-      primaryColor: Colors.teal,
-      elevationButtonTheme: DElevatedButtonTheme.darkElevatedButtonTheme,
-      appBarTheme: DAppbarTheme.darkAppbarTheme,
-      scaffoldBackgroundColor: Colors.black,
-      textTheme: DTextTheme.darkTextTheme,
-      inputDecorationTheme: DTextFieldTheme.darkInputDecorationTheme,
-      cardTheme: DCardTheme.darkCardTheme,
-      dialogTheme: DDialogTheme.darkDialogTheme,
-      iconButtonTheme: DIconButtonTheme.darkIconButtonTheme);
+    brightness: Brightness.dark,
+    primaryColor: Colors.teal,
+    elevationButtonTheme: DElevatedButtonTheme.darkElevatedButtonTheme,
+    appBarTheme: DAppbarTheme.darkAppbarTheme,
+    scaffoldBackgroundColor: Colors.black,
+    textTheme: DTextTheme.darkTextTheme,
+    inputDecorationTheme: DTextFieldTheme.darkInputDecorationTheme,
+    cardTheme: DCardTheme.darkCardTheme,
+    dialogTheme: DDialogTheme.darkDialogTheme,
+    iconButtonTheme: DIconButtonTheme.darkIconButtonTheme,
+  );
 }

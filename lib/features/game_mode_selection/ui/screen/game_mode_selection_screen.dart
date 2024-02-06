@@ -49,16 +49,6 @@ class ModeSelectionScreen extends StatelessWidget {
                         child: ListView.builder(
                             itemCount: state.gameModes.length,
                             itemBuilder: (context, index) {
-                              if (index == state.gameModes.length) {
-                                return GameModeItem(
-                                    name: state.gameModes[index].name!,
-                                    imageUrl: state.gameModes[index].imageUrl!,
-                                    onPressed: () {
-                                      context.go(
-                                          '/gameMode/${state.gameModes[index].id!}');
-                                    },
-                                    isLocked: 1);
-                              }
                               return GameModeItem(
                                 name: state.gameModes[index].name!,
                                 imageUrl: state.gameModes[index].imageUrl!,
@@ -66,7 +56,6 @@ class ModeSelectionScreen extends StatelessWidget {
                                   context.go(
                                       '/gameMode/${state.gameModes[index].id!}');
                                 },
-                                isLocked: state.gameModes[index].isLocked ?? 0,
                               );
                             }),
                       )

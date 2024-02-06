@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
 class GameModeItem extends StatelessWidget {
-  const GameModeItem(
-      {super.key,
-      required this.name,
-      required this.imageUrl,
-      required this.onPressed,
-      required this.isLocked});
+  const GameModeItem({
+    super.key,
+    required this.name,
+    required this.imageUrl,
+    required this.onPressed,
+  });
   final String name;
-  final int isLocked;
+
   final String imageUrl;
   final VoidCallback onPressed;
 
@@ -18,7 +18,6 @@ class GameModeItem extends StatelessWidget {
       height: MediaQuery.of(context).size.height * 0.2,
       width: MediaQuery.of(context).size.width,
       child: Card(
-        color: isLocked == 1 ? Colors.black : Colors.grey,
         child: Stack(
           children: [
             Row(children: [
